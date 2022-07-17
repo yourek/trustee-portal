@@ -9,9 +9,12 @@ builder.Services.Configure<MongoDBSettings>(
 
 // Singleton - design pattern that creates a single copy of object inside server memory
 // MongoDB recommends to registerd in DI with singletone service lifetime
-builder.Services.AddSingleton<ArticlesService>();  
+builder.Services.AddSingleton<ArticlesService>();
 
-builder.Services.AddControllers();
+builder.Services.AddControllers()
+    .AddJsonOptions(
+        options => options.JsonSerializerOptions.PropertyNamingPolicy = null);
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
