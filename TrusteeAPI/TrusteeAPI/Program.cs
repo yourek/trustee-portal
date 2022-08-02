@@ -1,3 +1,5 @@
+using Microsoft.AspNetCore.Authentication;
+using TrusteeAPI.Helpers;
 using TrusteeAPI.Models;
 using TrusteeAPI.Services;
 
@@ -7,10 +9,14 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.Configure<MongoDBSettings>(
     builder.Configuration.GetSection("MongoDB"));
 
+builder.Services.AddAuthentication("BasicAuthentication")
+                .AddScheme<AuthenticationSchemeOptions, BasicAuthenticationHandler>("BasicAuthentication", null);
+
 // Singleton - design pattern that creates a single copy of object inside server memory
 // MongoDB recommends to registerd in DI with singletone service lifetime
 builder.Services.AddSingleton<ArticlesService>();
-builder.Services.AddSingleton<IUserService, UserService>();
+builder.Services.AddSingleton<UsersService>();
+builder.Services.AddSingleton<IAuthService, AuthService>();
 
 builder.Services.AddControllers()
     .AddJsonOptions(

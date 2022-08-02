@@ -9,20 +9,19 @@ namespace TrusteeAPI.Controllers
     [Route("api/[controller]")]
     public class AuthController : ControllerBase
     {
+        IAuthService _authService;
 
-        UserService _userService;
-
-        public AuthController(UserService userService) {
-            _userService = userService;
+        public AuthController(IAuthService authService) {
+            _authService = authService;
         }
 
         [AllowAnonymous]
         [HttpPost]
-        public AuthResponse Authenticate([FromBody] AuthRequest requestBody)
+        public async Task<AuthResponse> Authenticate([FromBody] AuthRequest requestBody)
         {
-            var isAuthenticated = _userService.Login(requestBody.User, requestBody.Password);
+            var user = await _authService.Login(requestBody.User, requestBody.Password);
 
-            if (isAuthenticated)
+            if (user != null)
             {
                 return new AuthResponse() { Status = "Authenticated" };
             }

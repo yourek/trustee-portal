@@ -1,4 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using System.Security.Claims;
+using TrusteeAPI.Helpers;
 using TrusteeAPI.Models.Entities;
 using TrusteeAPI.Models.TransportObjects;
 using TrusteeAPI.Services;
@@ -6,6 +9,7 @@ using TrusteeAPI.Services;
 namespace TrusteeAPI.Controllers
 {
     [ApiController]
+    [Authorize]
     [Route("api/[controller]")]
     public class ArticlesController : ControllerBase
     {
@@ -22,6 +26,7 @@ namespace TrusteeAPI.Controllers
         [HttpGet]
         public async Task<ActionResult<List<Article>>> Get()
         {
+            var test = User.FindFirstValue(ClaimTypes.AuthorizationDecision);
             var result = await _articlesService.GetAsync();
 
             return result;

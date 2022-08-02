@@ -14,5 +14,6 @@ namespace TrusteeAPI.Models.Entities
         [JsonPropertyName("Title")]
         public string Title { get; set; } = null!;
         public string? Body { get; set; }
+        public string? Date { get; set; }
     }
 }
