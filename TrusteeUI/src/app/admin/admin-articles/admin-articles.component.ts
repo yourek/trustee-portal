@@ -3,13 +3,13 @@ import { Article } from 'src/app/api/models';
 import { ContentOrchestrationService } from 'src/app/services/content.orchestration.service';
 
 @Component({
-  selector: 'app-articles',
-  templateUrl: './articles.component.html',
-  styleUrls: ['./articles.component.scss']
+  selector: 'app-admin-articles',
+  templateUrl: './admin-articles.component.html',
+  styleUrls: ['./admin-articles.component.scss']
 })
-export class ArticlesComponent implements OnInit {
+export class AdminArticlesComponent implements OnInit {
   public articles: Article[] = [];
-
+  
   constructor(private contentOrchestrationService: ContentOrchestrationService) { }
 
   ngOnInit(): void {

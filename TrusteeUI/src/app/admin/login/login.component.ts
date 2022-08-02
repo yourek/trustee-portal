@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { AuthRequest } from '../api/models';
-import { LoginSerivce } from '../services/login.service';
+import { ActivatedRoute, Router } from '@angular/router';
+import { AuthRequest } from 'src/app/api/models';
+import { LoginSerivce } from 'src/app/services/login.service';
 
 @Component({
   selector: 'app-login',
@@ -16,9 +16,13 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private loginSerivce: LoginSerivce,
-    private route: Router) { }
+    private router: Router,
+    private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+    if (this.loginSerivce.user.isAuthenticated) {
+      this.router.navigate(['../articles'], { relativeTo: this.route });
+    }
   }
 
   logIn() {
@@ -29,14 +33,14 @@ export class LoginComponent implements OnInit {
 
     this.loginSerivce.logIn(credentials).subscribe(
       result => {
-        this.route.navigate(['articles']);
+        this.router.navigate(['../articles'], { relativeTo: this.route });
       }
     );
   }
 
   logOut() {
     this.loginSerivce.logOut();
-    this.route.navigate(['login']);
+    this.router.navigate(['login']);
   }
 
 }
