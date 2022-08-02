@@ -10,7 +10,7 @@ import { environment } from 'src/environments/environment';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
 import { FormsModule } from '@angular/forms';
-import { ArticlesComponent } from './articles/client-articles/articles.component';
+import { ArticlesComponent } from './articles/articles.component';
 import { BasicAuthInterceptor } from './helpers/basic-auth.interceptor';
 
 @NgModule({
