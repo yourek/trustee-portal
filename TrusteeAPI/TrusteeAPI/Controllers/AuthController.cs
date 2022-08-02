@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using TrusteeAPI.Models.TransportObjects;
-using System.Configuration;
 using TrusteeAPI.Services;
 
 namespace TrusteeAPI.Controllers
@@ -10,11 +9,10 @@ namespace TrusteeAPI.Controllers
     [Route("api/[controller]")]
     public class AuthController : ControllerBase
     {
-        IConfiguration _config;
+
         UserService _userService;
 
-        public AuthController(IConfiguration config, UserService userService) {
-            _config = config;
+        public AuthController(UserService userService) {
             _userService = userService;
         }
 
@@ -22,7 +20,6 @@ namespace TrusteeAPI.Controllers
         [HttpPost]
         public AuthResponse Authenticate([FromBody] AuthRequest requestBody)
         {
-
             var isAuthenticated = _userService.Login(requestBody.User, requestBody.Password);
 
             if (isAuthenticated)

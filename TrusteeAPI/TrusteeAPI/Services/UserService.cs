@@ -1,6 +1,6 @@
 ﻿namespace TrusteeAPI.Services
 {
-    public class UserService
+    public class UserService : IUserService
     {
         IConfiguration _config;
         public UserService(IConfiguration config)
