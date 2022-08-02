@@ -10,6 +10,7 @@ builder.Services.Configure<MongoDBSettings>(
 // Singleton - design pattern that creates a single copy of object inside server memory
 // MongoDB recommends to registerd in DI with singletone service lifetime
 builder.Services.AddSingleton<ArticlesService>();
+builder.Services.AddSingleton<UserService>();
 
 builder.Services.AddControllers()
     .AddJsonOptions(
@@ -28,7 +29,14 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+app.UseCors(x => x
+    .AllowAnyOrigin()
+    .AllowAnyHeader()
+    .AllowAnyMethod());
+
 app.UseHttpsRedirection();
+
+app.UseAuthentication();
 
 app.UseAuthorization();
 
