@@ -37,10 +37,4 @@ export class LoginComponent implements OnInit {
       }
     );
   }
-
-  logOut() {
-    this.loginSerivce.logOut();
-    this.router.navigate(['login']);
-  }
-
 }

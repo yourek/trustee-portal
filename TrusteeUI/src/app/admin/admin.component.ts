@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { LoginSerivce } from '../services/login.service';
 
 @Component({
   selector: 'app-admin',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private loginSerivce: LoginSerivce,
+    private router: Router,
+    private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+  }
+
+  logOut(): void {
+    this.loginSerivce.logOut();
+    this.router.navigate(['./login'], { relativeTo: this.route });
   }
 
 }

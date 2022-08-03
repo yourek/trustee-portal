@@ -1,6 +1,22 @@
 @import '@angular/material/prebuilt-themes/indigo-pink.css';
+
 html, body { height: 100%; }
 body {
-    margin: 0; 
+    margin: 0 !important;
     font-family: Roboto, "Helvetica Neue", sans-serif;
 }
+
+$ColorWhite: rgb(255, 255, 255);
+$ColorBlack: black;
+
+$ColorSlate1: rgb(30, 30, 30);
+$ColorSlate2: rgb(50, 50, 50);
+$ColorSlate3: rgb(75, 75, 75);
+$ColorSlate4: rgb(95, 95, 95);
+$ColorSlate5: rgb(120, 120, 120);
+$ColorSlate6: rgb(140, 140, 140);
+$ColorSlate7: rgb(165, 165, 165);
+$ColorSlate8: rgb(185, 185, 185);
+$ColorSlate9: rgb(210, 210, 210);
+$ColorSlate10: rgb(245, 245, 245);
+$ColorSlate11: rgb(248, 248, 248);

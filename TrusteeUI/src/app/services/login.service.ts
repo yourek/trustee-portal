@@ -1,4 +1,5 @@
 import { Injectable } from "@angular/core";
+import { ActivatedRoute, Router } from "@angular/router";
 import { map } from 'rxjs/operators';
 import { AuthRequest } from "../api/models";
 import { AuthService } from "../api/services";
@@ -12,7 +13,8 @@ export class LoginSerivce {
         isAuthenticated: false,
     }
     
-    constructor(private authService: AuthService){
+    constructor(
+        private authService: AuthService){
         var userFromLocalStorage = localStorage.getItem('user');
         if (userFromLocalStorage) {
             this.user = JSON.parse(userFromLocalStorage);
@@ -34,5 +36,9 @@ export class LoginSerivce {
 
     logOut(){
         localStorage.setItem('user', '');
+        this.user = {
+            authData: '',
+            isAuthenticated: false,
+        };
     }
 }
