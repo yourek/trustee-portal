@@ -20,7 +20,7 @@ export class LoginComponent implements OnInit {
     private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    if (this.loginSerivce.user.isAuthenticated) {
+    if (this.loginSerivce.currentUserValue.isAuthenticated) {
       this.router.navigate(['../articles'], { relativeTo: this.route });
     }
   }

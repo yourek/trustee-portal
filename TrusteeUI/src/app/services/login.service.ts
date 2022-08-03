@@ -1,33 +1,57 @@
 import { Injectable } from "@angular/core";
-import { ActivatedRoute, Router } from "@angular/router";
+import { BehaviorSubject, Observable } from "rxjs";
 import { map } from 'rxjs/operators';
-import { AuthRequest } from "../api/models";
+import { AuthRequest, User } from "../api/models";
 import { AuthService } from "../api/services";
+
+interface CurrentUser {
+    user: User | null,
+    authData: string,
+    isAuthenticated: boolean
+}
+
 
 @Injectable({
     providedIn: 'root'
   })
 export class LoginSerivce {
-    public user = {
+    private newUser: CurrentUser = {
+        user: null,
         authData: '',
-        isAuthenticated: false,
+        isAuthenticated: false
     }
+    private currentUserSubject = new BehaviorSubject<CurrentUser>(this.newUser);
+    public currentUser: Observable<CurrentUser> = this.currentUserSubject.asObservable();
     
     constructor(
         private authService: AuthService){
         var userFromLocalStorage = localStorage.getItem('user');
-        if (userFromLocalStorage) {
-            this.user = JSON.parse(userFromLocalStorage);
-        }
+        if (userFromLocalStorage){
+            this.currentUserSubject = new BehaviorSubject<CurrentUser>(JSON.parse(userFromLocalStorage));
+            this.currentUser = this.currentUserSubject.asObservable();
+        };
+    }
+
+    public get currentUserValue(): CurrentUser {
+        return this.currentUserSubject.value;
+    }
+
+    public get currentUserFullName(): string | undefined {
+        return this.currentUserSubject.value.user?.FullName?.toString();
     }
 
     logIn(credentials: AuthRequest){
         return this.authService.apiAuthPost$Json({body: credentials}).pipe(
             map(result => {
                 if (result.Status === "Authenticated") {
-                    this.user.authData = window.btoa(credentials.User + ':' + credentials.Password);
-                    this.user.isAuthenticated = true;
-                    localStorage.setItem('user', JSON.stringify(this.user));
+                    if (result.User){
+                        this.newUser.user = result.User;
+                        this.newUser.authData = window.btoa(credentials.User + ':' + credentials.Password);
+                        this.newUser.isAuthenticated = true;
+                        localStorage.setItem('user', JSON.stringify(this.newUser));
+                        this.currentUserSubject.next(this.newUser);
+                        console.log(this.currentUserSubject);
+                    }
                 };
                 return result;
             })
@@ -36,9 +60,6 @@ export class LoginSerivce {
 
     logOut(){
         localStorage.setItem('user', '');
-        this.user = {
-            authData: '',
-            isAuthenticated: false,
-        };
+        this.currentUserSubject.next({user: null, authData: '', isAuthenticated: false});
     }
 }

@@ -23,7 +23,10 @@ namespace TrusteeAPI.Controllers
 
             if (user != null)
             {
-                return new AuthResponse() { Status = "Authenticated" };
+                return new AuthResponse() { 
+                    Status = "Authenticated",
+                    User = user
+                };
             }
             
             return new AuthResponse();

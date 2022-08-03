@@ -8,7 +8,7 @@ export class BasicAuthInterceptor implements HttpInterceptor {
     constructor(private loginSerivce: LoginSerivce){}
 
     intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-        var user = this.loginSerivce.user;
+        var user = this.loginSerivce.currentUserValue;
         if (user.isAuthenticated) {
             req = req.clone({
                 setHeaders: {

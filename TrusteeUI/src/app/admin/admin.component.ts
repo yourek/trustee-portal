@@ -8,6 +8,7 @@ import { LoginSerivce } from '../services/login.service';
   styleUrls: ['./admin.component.scss']
 })
 export class AdminComponent implements OnInit {
+  currentUserName: string | undefined = '';
 
   constructor(
     private loginSerivce: LoginSerivce,
@@ -15,6 +16,13 @@ export class AdminComponent implements OnInit {
     private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.loginSerivce.currentUser.subscribe(res => {
+      if(res.user?.FullName){
+        this.currentUserName = res.user?.FullName;
+      } else {
+        this.currentUserName = '';
+      }
+    })
   }
 
   logOut(): void {
