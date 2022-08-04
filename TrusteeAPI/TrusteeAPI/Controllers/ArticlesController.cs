@@ -50,6 +50,7 @@ namespace TrusteeAPI.Controllers
         {
             Article article = new Article(){ 
                 Title = newArticle.Title, 
+                Date = newArticle.Date,
                 Body = newArticle.Body
             };
 

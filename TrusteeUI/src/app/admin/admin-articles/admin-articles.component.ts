@@ -72,4 +72,8 @@ export class AdminArticlesComponent implements OnInit, OnChanges {
   editArticle(article: Article) {
     this.router.navigate(['articles/edit', article.Id], { relativeTo: this.route });
   } 
+
+  createArticle() {
+    this.router.navigate(['articles/create'], { relativeTo: this.route })
+  }
 }

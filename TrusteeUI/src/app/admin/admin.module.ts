@@ -16,6 +16,7 @@ import { LoginComponent } from './login/login.component';
 import { AdminHomeComponent } from './admin-home/admin-home.component';
 import { AdminAuctionsComponent } from './admin-auctions/admin-auctions.component';
 import { AdminArticlesEditComponent } from './admin-articles-edit/admin-articles-edit.component';
+import { AdminArticlesCreateComponent } from './admin-articles-create/admin-articles-create.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { AdminArticlesEditComponent } from './admin-articles-edit/admin-articles
     LoginComponent,
     AdminHomeComponent,
     AdminAuctionsComponent,
-    AdminArticlesEditComponent
+    AdminArticlesEditComponent,
+    AdminArticlesCreateComponent
   ],
   imports: [
     CommonModule,

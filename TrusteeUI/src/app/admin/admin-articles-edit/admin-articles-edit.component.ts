@@ -24,10 +24,10 @@ export class AdminArticlesEditComponent implements OnInit {
 
     this.userForm = new FormGroup(
       {
-        id: new FormControl({value: this.id, disabled: true}),
-        title: new FormControl({value: ''}),
-        date: new FormControl({value: ''}),
-        body: new FormControl({value: ''})
+        id: new FormControl({value: this.id, disabled: true},[Validators.required]),
+        title: new FormControl({value: ''},[Validators.required]),
+        date: new FormControl({value: ''},[Validators.required]),
+        body: new FormControl({value: ''},[Validators.required])
       }
     )
 

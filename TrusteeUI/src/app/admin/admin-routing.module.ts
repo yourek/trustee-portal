@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from '../helpers/auth.guard';
+import { AdminArticlesCreateComponent } from './admin-articles-create/admin-articles-create.component';
 import { AdminArticlesEditComponent } from './admin-articles-edit/admin-articles-edit.component';
-import { AdminArticlesComponent } from './admin-articles/admin-articles.component';
 import { AdminHomeComponent } from './admin-home/admin-home.component';
 import { AdminComponent } from './admin.component';
 import { LoginComponent } from './login/login.component';
@@ -33,6 +33,11 @@ const routes: Routes = [
                 canActivate: [ AuthGuard ]
               }
             ]
+          },
+          {
+            path: 'create',
+            component: AdminArticlesCreateComponent,
+            canActivate: [ AuthGuard ]
           }
         ]
         

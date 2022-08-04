@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { Article } from "../api/models";
+import { Article, NewArticle } from "../api/models";
 import { ArticlesService } from "../api/services";
 
 @Injectable({
@@ -18,6 +18,10 @@ export class ContentOrchestrationService {
 
     updateArticle(id: string, article: Article) {
         return this.articlesService.apiArticlesIdPut({id, body: article});
+    }
+
+    createArticle(newArticle: NewArticle){
+        return this.articlesService.apiArticlesPost({body: newArticle})
     }
 
     deleteArticle(id: string) {

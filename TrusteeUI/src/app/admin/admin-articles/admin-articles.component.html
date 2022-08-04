@@ -1,4 +1,7 @@
 <div class="container">
+    <div class="top-row">
+        <button mat-raised-button color="primary" class="create-btn" (click)="createArticle()">Stwórz nowy artykuł</button>
+    </div>
     <table mat-table [dataSource]="this.dataSource" class="mat-elevation-z8 article-table">
         <ng-container matColumnDef="Id">
             <th mat-header-cell *matHeaderCellDef>Id</th>
@@ -19,7 +22,7 @@
         <ng-container matColumnDef="Edit">
             <th mat-header-cell *matHeaderCellDef>Edit</th>
             <td matt-cell *matCellDef="let article">  
-                <button color="accent" (click)="editArticle(article)">
+                <button (click)="editArticle(article)">
                     <mat-icon class="mat-18">edit</mat-icon>
                   </button>
             </td>
@@ -27,7 +30,7 @@
         <ng-container matColumnDef="Delete">
             <th mat-header-cell *matHeaderCellDef>Delete</th>
             <td matt-cell *matCellDef="let article">
-                <button color="warn" (click)="deleteArticle(article)">
+                <button (click)="deleteArticle(article)">
                     <mat-icon class="mat-18">delete</mat-icon>
                   </button>
             </td>
