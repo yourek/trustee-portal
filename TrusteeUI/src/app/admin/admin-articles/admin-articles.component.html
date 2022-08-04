@@ -1,1 +1,40 @@
-<p>admin-articles works!</p>
+<div class="container">
+    <table mat-table [dataSource]="this.dataSource" class="mat-elevation-z8 article-table">
+        <ng-container matColumnDef="Id">
+            <th mat-header-cell *matHeaderCellDef>Id</th>
+            <td matt-cell *matCellDef="let article"> {{article.Id}} </td>
+        </ng-container>
+        <ng-container matColumnDef="Title">
+            <th mat-header-cell *matHeaderCellDef>Title</th>
+            <td matt-cell *matCellDef="let article"> {{article.Title}} </td>
+        </ng-container>
+        <ng-container matColumnDef="Date">
+            <th mat-header-cell *matHeaderCellDef>Date</th>
+            <td matt-cell *matCellDef="let article"> {{article.Date}} </td>
+        </ng-container>
+        <ng-container matColumnDef="Body">
+            <th mat-header-cell *matHeaderCellDef>Body</th>
+            <td matt-cell *matCellDef="let article"> {{article.Body}} </td>
+        </ng-container>
+        <ng-container matColumnDef="Edit">
+            <th mat-header-cell *matHeaderCellDef>Edit</th>
+            <td matt-cell *matCellDef="let article">  
+                <button color="accent" (click)="editArticle(article)">
+                    <mat-icon class="mat-18">edit</mat-icon>
+                  </button>
+            </td>
+        </ng-container>
+        <ng-container matColumnDef="Delete">
+            <th mat-header-cell *matHeaderCellDef>Delete</th>
+            <td matt-cell *matCellDef="let article">
+                <button color="warn" (click)="deleteArticle(article)">
+                    <mat-icon class="mat-18">delete</mat-icon>
+                  </button>
+            </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let user; columns: displayedColumns;"></tr>
+
+    </table>
+</div>

@@ -11,4 +11,16 @@ export class ContentOrchestrationService {
     getArticles() {
         return this.articlesService.apiArticlesGet$Json();
     }
+
+    getArticle(id: string) {
+        return this.articlesService.apiArticlesIdGet$Json({id});
+    }
+
+    updateArticle(id: string, article: Article) {
+        return this.articlesService.apiArticlesIdPut({id, body: article});
+    }
+
+    deleteArticle(id: string) {
+        return this.articlesService.apiArticlesIdDelete({id});
+    }
 }

@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatIconModule } from '@angular/material/icon';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,10 +12,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
 import { FormsModule } from '@angular/forms';
 import { BasicAuthInterceptor } from './helpers/basic-auth.interceptor';
+import { SimpleConfirmationDialogComponent } from './tools/dialogs/simple-confirmation-dialog/simple-confirmation-dialog.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    SimpleConfirmationDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -22,7 +26,9 @@ import { BasicAuthInterceptor } from './helpers/basic-auth.interceptor';
     ApiModule.forRoot({ rootUrl: environment.apiUrl}),
     BrowserAnimationsModule,
     MatButtonModule,
-    FormsModule
+    FormsModule,
+    MatDialogModule,
+    MatIconModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: BasicAuthInterceptor, multi: true}

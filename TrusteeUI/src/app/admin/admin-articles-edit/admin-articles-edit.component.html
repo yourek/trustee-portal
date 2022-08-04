@@ -1,0 +1,33 @@
+<mat-card fxFlex="500px" fxFlex.xs="100%" fxLayout="column">
+    <mat-card-title>Edytuj Artykuł</mat-card-title>
+    <form [formGroup]="this.userForm" (submit)="onConfirm()">
+        <div class="first-row">
+            <mat-card-content>
+                <mat-form-field>
+                    <input matInput type = "text" placeholder = "Id" formControlName = "id">
+                </mat-form-field>
+            </mat-card-content>
+            <mat-card-content>
+                <mat-form-field>
+                    <input matInput type = "text" placeholder = "Data" formControlName = "date">
+                </mat-form-field>
+            </mat-card-content>
+            <mat-card-content class="title">
+                <mat-form-field>
+                    <input matInput type = "text" placeholder = "Tytuł" formControlName = "title">
+                </mat-form-field>
+            </mat-card-content>
+        </div>
+        <div class="second-row">
+            <mat-card-content>
+                <textarea class="text-area" rows="10" cols="10" formControlName="body">At w3schools.com you will learn how to make a website. They offer free tutorials in all web development technologies.</textarea>
+            </mat-card-content>
+        </div>
+        <mat-card-actions>
+            <div class="third-row">
+                <button mat-raised-button color="primary" type="submit">Confirm</button>
+                <button type="button" mat-raised-button color="warn" (click)="onCancel()">Cancel</button>
+            </div>
+        </mat-card-actions>        
+    </form>
+</mat-card>

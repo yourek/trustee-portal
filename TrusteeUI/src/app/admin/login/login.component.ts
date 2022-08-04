@@ -32,9 +32,7 @@ export class LoginComponent implements OnInit {
     };
 
     this.loginSerivce.logIn(credentials).subscribe(
-      result => {
-        this.router.navigate(['../articles'], { relativeTo: this.route });
-      }
+      () => this.router.navigate(['../articles'], { relativeTo: this.route })
     );
   }
 }
