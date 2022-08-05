@@ -5,6 +5,7 @@ import { HttpClient } from '@angular/common/http';
 import { ApiConfiguration, ApiConfigurationParams } from './api-configuration';
 
 import { ArticlesService } from './services/articles.service';
+import { AuctionsService } from './services/auctions.service';
 import { AuthService } from './services/auth.service';
 import { UploadService } from './services/upload.service';
 
@@ -17,6 +18,7 @@ import { UploadService } from './services/upload.service';
   declarations: [],
   providers: [
     ArticlesService,
+    AuctionsService,
     AuthService,
     UploadService,
     ApiConfiguration

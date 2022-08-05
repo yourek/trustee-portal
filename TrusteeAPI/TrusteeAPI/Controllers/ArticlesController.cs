@@ -45,7 +45,7 @@ namespace TrusteeAPI.Controllers
         [HttpPost]
         public async Task<IActionResult> Post(NewArticle newArticle)
         {
-            Article article = new Article(){ 
+            Article article = new(){ 
                 Title = newArticle.Title, 
                 Date = newArticle.Date,
                 Body = newArticle.Body
