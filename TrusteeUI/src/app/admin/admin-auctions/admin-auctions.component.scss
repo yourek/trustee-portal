@@ -1,0 +1,25 @@
+.container {
+    margin: 2px 5px 30px 5px;
+}
+
+.top-row {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.create-btn {
+    min-width: 150px;
+    margin: 10px;
+}
+
+.auction-table {
+    width: 100%
+}
+
+.mat-column-Body {
+    width: 30% !important;
+}
+
+td,th {
+    word-break: break-word;
+}

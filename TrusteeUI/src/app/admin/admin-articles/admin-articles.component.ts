@@ -22,7 +22,7 @@ export class AdminArticlesComponent implements OnInit, OnChanges {
   @Output() articleToDelete = new EventEmitter<Article>();
   
   public loading = true;
-  public dataSource = new MatTableDataSource<Article>();
+  public dataSource = new MatTableDataSource<TableArticle>();
   public displayedColumns = [
     'Id',
     'Title',
