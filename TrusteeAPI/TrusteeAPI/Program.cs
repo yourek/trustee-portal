@@ -19,6 +19,7 @@ builder.Services.AddScoped(
 // Singleton - design pattern that creates a single copy of object inside server memory
 // MongoDB recommends to registerd in DI with singletone service lifetime
 builder.Services.AddSingleton<ArticlesService>();
+builder.Services.AddSingleton<AuctionsService>();
 builder.Services.AddSingleton<UsersService>();
 builder.Services.AddSingleton<IAuthService, AuthService>();
 builder.Services.AddScoped<IBlobService, BlobService>();

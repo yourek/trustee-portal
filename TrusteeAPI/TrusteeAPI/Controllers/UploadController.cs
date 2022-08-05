@@ -11,6 +11,7 @@ namespace TrusteeAPI.Controllers
     public class UploadController : ControllerBase
     {
         private IBlobService _blobService;
+
         public UploadController(IBlobService blobService)
         {
             _blobService = blobService;
@@ -30,9 +31,9 @@ namespace TrusteeAPI.Controllers
                 file.ContentType,
                 file.FileName);
 
-            var toReturn = result.AbsoluteUri;
+            var filePath = result.AbsoluteUri;
 
-            return Ok(new UploadResponse { Path = toReturn });
+            return Ok(new UploadResponse { Path = filePath });
         }
     }
 }
