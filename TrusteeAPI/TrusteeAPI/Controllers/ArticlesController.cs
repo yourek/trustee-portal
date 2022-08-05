@@ -26,7 +26,6 @@ namespace TrusteeAPI.Controllers
         [HttpGet]
         public async Task<ActionResult<List<Article>>> Get()
         {
-            var test = User.FindFirstValue(ClaimTypes.AuthorizationDecision);
             var result = await _articlesService.GetAsync();
 
             return result;
