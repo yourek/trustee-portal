@@ -42,4 +42,11 @@ export class AdminHomeComponent implements OnInit {
         .subscribe(() => this.fetchData());
     }
   }
+
+  deleteAuction(event: any) {
+    if(event.Id) {
+      this.contentOrchestrationService.deleteAuction(event.Id)
+        .subscribe(() => this.fetchData());
+    }
+  }
 }

@@ -62,7 +62,7 @@ export class AdminAuctionsComponent implements OnInit {
   
     deleteAuction(auction: Auction) {
       this.confirmationsService.confirm({
-        message: `Czy aby na pewno chcesz usunąć ten artykuł ?`,
+        message: `Czy aby na pewno chcesz usunąć tę licytację ?`,
         action: () => {
           this.loading = true;
           this.emitAuctionToDelete(auction);

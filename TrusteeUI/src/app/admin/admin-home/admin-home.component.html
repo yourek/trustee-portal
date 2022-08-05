@@ -3,6 +3,6 @@
         <app-admin-articles (articleToDelete)="deleteArticle($event)" [articles]="articles"></app-admin-articles>
     </mat-tab>
     <mat-tab label="Licytacje">
-        <app-admin-auctions [auctions]="auctions"></app-admin-auctions>
+        <app-admin-auctions (auctionToDelete)="deleteAuction($event)" [auctions]="auctions"></app-admin-auctions>
     </mat-tab>
 </mat-tab-group>

@@ -18,6 +18,7 @@ import { AdminAuctionsComponent } from './admin-auctions/admin-auctions.componen
 import { AdminArticlesEditComponent } from './admin-articles-edit/admin-articles-edit.component';
 import { AdminArticlesCreateComponent } from './admin-articles-create/admin-articles-create.component';
 import { AdminAuctionsCreateComponent } from './admin-auctions-create/admin-auctions-create.component';
+import { AdminAuctionsEditComponent } from './admin-auctions-edit/admin-auctions-edit.component';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { AdminAuctionsCreateComponent } from './admin-auctions-create/admin-auct
     AdminAuctionsComponent,
     AdminArticlesEditComponent,
     AdminArticlesCreateComponent,
-    AdminAuctionsCreateComponent
+    AdminAuctionsCreateComponent,
+    AdminAuctionsEditComponent
   ],
   imports: [
     CommonModule,

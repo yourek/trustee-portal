@@ -1,0 +1,38 @@
+mat-card-content {
+    margin: 10px;
+}
+
+mat-form-field {
+    width: 100%;
+}
+
+mat-card-actions {
+    margin: 0px;
+}
+
+
+.title {
+    min-width: 400px;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.text-area {
+    width: 100%;
+}
+
+.third-row {
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+}
+
+.file-label {
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+}
