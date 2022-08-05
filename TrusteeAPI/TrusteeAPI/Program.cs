@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Authentication;
+using Azure.Storage.Blobs;
 using TrusteeAPI.Helpers;
 using TrusteeAPI.Models;
 using TrusteeAPI.Services;
@@ -12,11 +13,15 @@ builder.Services.Configure<MongoDBSettings>(
 builder.Services.AddAuthentication("BasicAuthentication")
                 .AddScheme<AuthenticationSchemeOptions, BasicAuthenticationHandler>("BasicAuthentication", null);
 
+builder.Services.AddScoped(
+    x => new BlobServiceClient(builder.Configuration.GetValue<string>("AzureBlobStorage")));
+
 // Singleton - design pattern that creates a single copy of object inside server memory
 // MongoDB recommends to registerd in DI with singletone service lifetime
 builder.Services.AddSingleton<ArticlesService>();
 builder.Services.AddSingleton<UsersService>();
 builder.Services.AddSingleton<IAuthService, AuthService>();
+builder.Services.AddScoped<IBlobService, BlobService>();
 
 builder.Services.AddControllers()
     .AddJsonOptions(
