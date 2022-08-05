@@ -9,6 +9,7 @@ import { RequestBuilder } from '../request-builder';
 import { Observable } from 'rxjs';
 import { map, filter } from 'rxjs/operators';
 
+import { UploadResponse } from '../models/upload-response';
 
 @Injectable({
   providedIn: 'root',
@@ -28,39 +29,91 @@ export class UploadService extends BaseService {
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
-   * To access only the response body, use `apiUploadPost()` instead.
+   * To access only the response body, use `apiUploadPost$Plain()` instead.
    *
-   * This method doesn't expect any request body.
+   * This method sends `multipart/form-data` and handles request body of type `multipart/form-data`.
    */
-  apiUploadPost$Response(params?: {
-  }): Observable<StrictHttpResponse<void>> {
+  apiUploadPost$Plain$Response(params?: {
+    body?: {
+'file'?: Blob;
+}
+  }): Observable<StrictHttpResponse<UploadResponse>> {
 
     const rb = new RequestBuilder(this.rootUrl, UploadService.ApiUploadPostPath, 'post');
     if (params) {
+      rb.body(params.body, 'multipart/form-data');
     }
 
     return this.http.request(rb.build({
       responseType: 'text',
-      accept: '*/*'
+      accept: 'text/plain'
     })).pipe(
       filter((r: any) => r instanceof HttpResponse),
       map((r: HttpResponse<any>) => {
-        return (r as HttpResponse<any>).clone({ body: undefined }) as StrictHttpResponse<void>;
+        return r as StrictHttpResponse<UploadResponse>;
       })
     );
   }
 
   /**
    * This method provides access to only to the response body.
-   * To access the full response (for headers, for example), `apiUploadPost$Response()` instead.
+   * To access the full response (for headers, for example), `apiUploadPost$Plain$Response()` instead.
    *
-   * This method doesn't expect any request body.
+   * This method sends `multipart/form-data` and handles request body of type `multipart/form-data`.
    */
-  apiUploadPost(params?: {
-  }): Observable<void> {
+  apiUploadPost$Plain(params?: {
+    body?: {
+'file'?: Blob;
+}
+  }): Observable<UploadResponse> {
 
-    return this.apiUploadPost$Response(params).pipe(
-      map((r: StrictHttpResponse<void>) => r.body as void)
+    return this.apiUploadPost$Plain$Response(params).pipe(
+      map((r: StrictHttpResponse<UploadResponse>) => r.body as UploadResponse)
+    );
+  }
+
+  /**
+   * This method provides access to the full `HttpResponse`, allowing access to response headers.
+   * To access only the response body, use `apiUploadPost$Json()` instead.
+   *
+   * This method sends `multipart/form-data` and handles request body of type `multipart/form-data`.
+   */
+  apiUploadPost$Json$Response(params?: {
+    body?: {
+'file'?: Blob;
+}
+  }): Observable<StrictHttpResponse<UploadResponse>> {
+
+    const rb = new RequestBuilder(this.rootUrl, UploadService.ApiUploadPostPath, 'post');
+    if (params) {
+      rb.body(params.body, 'multipart/form-data');
+    }
+
+    return this.http.request(rb.build({
+      responseType: 'json',
+      accept: 'text/json'
+    })).pipe(
+      filter((r: any) => r instanceof HttpResponse),
+      map((r: HttpResponse<any>) => {
+        return r as StrictHttpResponse<UploadResponse>;
+      })
+    );
+  }
+
+  /**
+   * This method provides access to only to the response body.
+   * To access the full response (for headers, for example), `apiUploadPost$Json$Response()` instead.
+   *
+   * This method sends `multipart/form-data` and handles request body of type `multipart/form-data`.
+   */
+  apiUploadPost$Json(params?: {
+    body?: {
+'file'?: Blob;
+}
+  }): Observable<UploadResponse> {
+
+    return this.apiUploadPost$Json$Response(params).pipe(
+      map((r: StrictHttpResponse<UploadResponse>) => r.body as UploadResponse)
     );
   }
 

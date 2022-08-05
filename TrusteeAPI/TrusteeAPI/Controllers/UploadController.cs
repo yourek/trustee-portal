@@ -17,9 +17,8 @@ namespace TrusteeAPI.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Upload()
+        public async Task<ActionResult<UploadResponse>> Upload(IFormFile file)
         {
-            IFormFile file = Request.Form.Files[0];
             if (file == null)
             {
                 return BadRequest();

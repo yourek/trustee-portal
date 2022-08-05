@@ -1,0 +1,13 @@
+<p>admin-auctions-create works!</p>
+<button type="button" (click)="fileInput.click()">Choose File</button>
+<input
+  hidden
+  #fileInput
+  type="file"
+  id="file"
+  (change)="setFilename(fileInput.files)"
+/>
+<label>{{ filename }}</label>
+<br />
+<button type="button" (click)="save(fileInput)">Save</button>
+<br />
