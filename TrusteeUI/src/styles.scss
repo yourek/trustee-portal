@@ -1,11 +1,5 @@
 @import '@angular/material/prebuilt-themes/indigo-pink.css';
 
-html, body { height: 100%; }
-body {
-    margin: 0 !important;
-    font-family: Roboto, "Helvetica Neue", sans-serif;
-}
-
 $ColorWhite: rgb(255, 255, 255);
 $ColorBlack: black;
 
@@ -20,3 +14,11 @@ $ColorSlate8: rgb(185, 185, 185);
 $ColorSlate9: rgb(210, 210, 210);
 $ColorSlate10: rgb(245, 245, 245);
 $ColorSlate11: rgb(248, 248, 248);
+
+html, body { height: 100%; }
+body {
+    margin: 0 !important;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    background-color: $ColorSlate11;
+}
+
