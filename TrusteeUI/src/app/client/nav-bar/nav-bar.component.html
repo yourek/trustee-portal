@@ -1,32 +1,68 @@
 <header class="header">
     <nav class="header-nav">
-        <div class="logo">
-            <img src="assets/Kearney-Analytics-Warsaw-Hub.jpg" class="logo-img">
+        <div class="container">
+            <div class="header-row">
+                <div class="logo">
+                    <img src="assets/adwokatura_logo.jpg" class="logo-img">
+                </div>
+                <div class="nav-buttons">
+                    <div *ngIf="!this.mobileSize" class="nav-buttons-long">
+                        <button mat-button [routerLink]="'/'" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{ exact: true }">Strona Główna</button>
+                        <button mat-button [routerLink]="'/aktualnosci'" [routerLinkActive]="['active']">Aktualności</button>
+                        <!-- <button mat-button [routerLink]="'./'" [routerLinkActive]="['active']">Specjalizacje</button> -->
+                        <button mat-button [routerLink]="'/licytacje'" [routerLinkActive]="['active']">Licytacje</button>
+                        <!-- <button mat-raised-button [routerLink]="'./'" [routerLinkActive]="['active']">Kontakt</button> -->
+                    </div>
+                    
+                    <div *ngIf="this.mobileSize" class="nav-buttons-short">
+                        
+                        <button mat-icon-button color="accent" [matMenuTriggerFor]="belowMenu" aria-label="Example icon-button with a menu">
+                            <mat-icon>menu</mat-icon>
+                        </button>
+                        <mat-menu #belowMenu="matMenu" yPosition="below">
+                            <button mat-menu-item [routerLink]="'/'">Strona Główna</button>
+                            <button mat-menu-item [routerLink]="'./aktualnosci'">Aktualności</button>
+                            <button mat-menu-item [routerLink]="'./'">Specjalizacje</button>
+                            <button mat-menu-item [routerLink]="'./licytacje'">Licytacje</button>
+                            <button mat-menu-item [routerLink]="'./'">Kontakt</button>
+                        </mat-menu>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="nav-buttons">
-            <div *ngIf="!this.mobileSize" class="nav-buttons-long">
-                <button mat-button [routerLink]="'/'" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{ exact: true }">Strona Główna</button>
-                <button mat-button [routerLink]="'/aktualnosci'" [routerLinkActive]="['active']">Aktualności</button>
-                <!-- <button mat-button [routerLink]="'./'" [routerLinkActive]="['active']">Specjalizacje</button> -->
-                <button mat-button [routerLink]="'/licytacje'" [routerLinkActive]="['active']">Licytacje</button>
-                <!-- <button mat-raised-button [routerLink]="'./'" [routerLinkActive]="['active']">Kontakt</button> -->
+    </nav>
+    <nav id="header" class="header-nav-sticky">
+        <div class="container">
+            <div class="header-row">
+                <div>
+                    <h1>
+                        Kamil Bartko | Adwokat | Syndyk
+                    </h1>
+                </div>
+                <div class="nav-buttons">
+                    <div *ngIf="!this.mobileSize" class="nav-buttons-long">
+                        <button mat-button [routerLink]="'/'" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{ exact: true }">Strona Główna</button>
+                        <button mat-button [routerLink]="'/aktualnosci'" [routerLinkActive]="['active']">Aktualności</button>
+                        <!-- <button mat-button [routerLink]="'./'" [routerLinkActive]="['active']">Specjalizacje</button> -->
+                        <button mat-button [routerLink]="'/licytacje'" [routerLinkActive]="['active']">Licytacje</button>
+                        <!-- <button mat-raised-button [routerLink]="'./'" [routerLinkActive]="['active']">Kontakt</button> -->
+                    </div>
+                    
+                    <div *ngIf="this.mobileSize" class="nav-buttons-short">
+                        
+                        <button mat-icon-button color="accent" [matMenuTriggerFor]="belowMenu" aria-label="Example icon-button with a menu">
+                            <mat-icon>menu</mat-icon>
+                        </button>
+                        <mat-menu #belowMenu="matMenu" yPosition="below">
+                            <button mat-menu-item [routerLink]="'/'">Strona Główna</button>
+                            <button mat-menu-item [routerLink]="'./aktualnosci'">Aktualności</button>
+                            <button mat-menu-item [routerLink]="'./'">Specjalizacje</button>
+                            <button mat-menu-item [routerLink]="'./licytacje'">Licytacje</button>
+                            <button mat-menu-item [routerLink]="'./'">Kontakt</button>
+                        </mat-menu>
+                    </div>
+                </div>
             </div>
-            
-            <div *ngIf="this.mobileSize" class="nav-buttons-short">
-                
-                <button mat-icon-button color="accent" [matMenuTriggerFor]="belowMenu" aria-label="Example icon-button with a menu">
-                    <mat-icon>menu</mat-icon>
-                </button>
-                <mat-menu #belowMenu="matMenu" yPosition="below">
-                    <button mat-menu-item [routerLink]="'/'">Strona Główna</button>
-                    <button mat-menu-item [routerLink]="'./aktualnosci'">Aktualności</button>
-                    <button mat-menu-item [routerLink]="'./'">Specjalizacje</button>
-                    <button mat-menu-item [routerLink]="'./licytacje'">Licytacje</button>
-                    <button mat-menu-item [routerLink]="'./'">Kontakt</button>
-                </mat-menu>
-            </div>
-            
-            
         </div>
     </nav>
 </header>

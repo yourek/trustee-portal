@@ -1,5 +1,5 @@
 import { BreakpointObserver, BreakpointState } from '@angular/cdk/layout';
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-nav-bar',
@@ -10,6 +10,16 @@ export class NavBarComponent implements OnInit {
   mobileSize = false; 
 
   constructor(private breakpointObserver: BreakpointObserver) { }
+
+  @HostListener("window:scroll", [])
+  onWindowScroll(){
+    if (window.scrollY > 150) {
+      document.getElementById("header")?.classList.add("sticky")
+      console.log('test')
+    } else {
+      document.getElementById("header")?.classList.remove("sticky")
+    }
+  }
 
   ngOnInit(): void {
     this.breakpointObserver
