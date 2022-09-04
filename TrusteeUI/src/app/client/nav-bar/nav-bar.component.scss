@@ -1,8 +1,11 @@
 @import "../../../styles.scss";
 
+* {
+    transition: all .3s ease-in-out;
+}
+
 .header {
     width: 100%;
-    transition: all .3s ease-in-out;
 }
 
 .header-nav {
@@ -18,11 +21,11 @@
     position: fixed;
     top: -120px;
     opacity: 0;
+    
 }
 
 .sticky {
     opacity: 1;
-    transition: opacity 0.3s;
     top: 0;
     z-index: 9999;
 }
