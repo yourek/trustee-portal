@@ -12,7 +12,7 @@
     <!-- <img src="assets/wwa.jpg" class="main-img"> -->
     <!-- <lib-slick-slides></lib-slick-slides> -->
     
-    <div class="slick-dots">
+    <!-- <div class="slick-dots">
         <button *ngFor="let element of dummyElements" 
             class="slick-dot"
             [attr.id]="'btn-'+element" 
@@ -30,15 +30,111 @@
             [ngClass]="{'new-slick-item-active' : element.toString() === this.activeElementId}">
                 {{element}}
         </h1>
-    </div>
+    </div> -->
+    <section class="section">
+        <div class="about">
+            <div class="about-top">
+                <!-- <mat-icon class="mat-title-icon">verified_user</mat-icon>
+                <h2 class="title-2">
+                    Kim jestem?
+                </h2> -->
+            </div>
+            <div class="about-bottom">
+                <div class="about-left">
+                    <img src="assets/portrait.jpg" class="about-img">
+                </div>
+                <div class="about-right">
+                    <h4 class="title-4 text-upper">
+                        Trafiłeś w dobre ręce.
+                    </h4>
+                    <h2 class="title-1">
+                        Błyskotliwy adwokat i syndyk.
+                    </h2>
+                    <p class="text-large">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut 
+                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
+                        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in 
+                        voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat 
+                        non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    </p>
+                </div>
+            </div>
 
-    <div class="row">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut 
-        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
-        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in 
-        voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat 
-        non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </div>
+    </section>
+</div>
+<div class="section-white">
+    <div class="container">
+        <section class="section">
+            <div class="faculties">
+                <div class="faculties-auctions-highlight">
+                    <div class="auctions-top">
+                        <mat-icon class="mat-title-icon">gavel</mat-icon>
+                        <h2 class="title-tile">
+                            Najnowsze Licytacje
+                        </h2>
+                        <a [routerLink]="'/licytacje'" class="link-tile text-upper">Zobacz wszystkie licytacje</a>
+                        <mat-icon class="link-tile-arrow">arrow_right</mat-icon>
+                    </div>
+                    <div class="auctions-list">
+                        <div class="auction-item">
+                            <h3 class="auction-title">
+                                Licytacja nieruchomości na Bemowie
+                            </h3>
+                            <h4 class="auction-date">
+                                24. Lipca, 2022
+                            </h4>
+                            <p class="auction-text">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut 
+                                labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
+                                laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in 
+                                voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat 
+                                non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                            </p>
+                        </div>
+                        <div class="auction-item">
+                            <h3 class="auction-title">
+                                Licytacja nieruchomości na Bemowie
+                            </h3>
+                            <h4 class="auction-date">
+                                24. Lipca, 2022
+                            </h4>
+                            <p class="auction-text">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut 
+                                labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
+                                laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in 
+                                voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat 
+                                non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                            </p>
+                        </div>
+                        <div class="auction-item">
+                            <h3 class="auction-title">
+                                Licytacja nieruchomości na Bemowie
+                            </h3>
+                            <h4 class="auction-date">
+                                24. Lipca, 2022
+                            </h4>
+                            <p class="auction-text">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut 
+                                labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
+                                laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in 
+                                voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat 
+                                non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                            </p>
+                        </div>
+    
+                    </div>
+                </div>
+                <div class="faculties-blog-highlight">
+                    
+                </div>
+            </div>
+        </section>
     </div>
+</div>
+
+
+<div class="container">
     <div class="row">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut 
         labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 

@@ -66,3 +66,90 @@
     opacity: 1;
     transition: all .4s ease-in-out;
 }
+
+.about {
+    display: flex;
+    flex-direction: column;
+}
+
+.about-top {
+    display: flex;
+    //justify-content: center;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.about-bottom {
+    display: flex;
+    justify-content: space-between;
+}
+
+.about-left {
+
+}
+
+.about-img {
+    width: 600px;
+    height: auto;
+}
+
+.about-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-grow: 1;
+    padding: 96px 48px;
+}
+
+.faculties {
+    display: flex;
+}
+
+.faculties-auctions-highlight {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 66%;
+    margin-right: 50px;
+}
+
+.auctions-top {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.auction-item {
+    padding: 25px 20px;
+}
+
+.auction-title {
+    font-size: 26px;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.auction-date {
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.auction-text {
+    line-height: 20px;
+}
+
+
+.auctions-list {
+    margin-top: 20px;
+    border-top: 1px #cac9c7 solid;
+    float: left;
+}
+
+.faculties-blog-highlight { 
+    display: flex;
+    flex-direction: column;
+    flex-grow: 2;
+    background-image: url('/assets/warszawa-nocne-zdjecia-01.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+

@@ -27,6 +27,9 @@ $my-custom-typography: mat.define-typography-config(
 
 $ColorWhite: rgb(255, 255, 255);
 $ColorBlack: black;
+$Theme1: #E6B325;
+$Footer: #2c3e50;
+
 
 $ColorSlate1: rgb(30, 30, 30);
 $ColorSlate2: rgb(50, 50, 50);
@@ -51,6 +54,11 @@ body {
     background-color: $ColorSlate11;
 }
 
+a {
+  text-decoration: none;
+}
+
+
 .container {
     max-width: 1345px;
     margin-left: auto;
@@ -58,6 +66,85 @@ body {
 }
 
 .row {
-    margin: 10px;
     display: flex;
+}
+
+.section {
+  padding: 65px 0;
+}
+
+.section-white {
+  background-color: $ColorWhite;
+}
+
+.title-1 {
+  margin-top: 0px;
+  margin-bottom: 24px;
+  color: #2c2d36;
+  font-size: 58px;
+  line-height: 60px;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+
+.title-2 {
+  font-size: 28px;
+}
+
+.title-tile {
+  font-size: 48px;
+  font-weight: 300;
+  margin-bottom: 0;
+  margin-right: 15px;
+}
+
+.mat-title-icon {
+  color: $Theme1;
+  font-size: 48px;
+  width: 48px;
+  height: 48px;
+  margin-right: 5px;
+}
+
+.title-4 {
+  font-size: 14px;
+}
+
+.title-icon {
+  height: 50px;
+  margin-right: 5px;
+}
+
+.text-upper {
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-indent: -0.05em;
+  text-transform: uppercase;
+}
+
+.text-large {
+  font-size: 20px;
+  line-height: 28px;
+}
+
+.link-tile {
+  margin-top: 20px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #00538e;
+  border-bottom: 1px #00538e solid;
+  transition: all .3s ease-in-out;
+}
+
+.link-tile:hover {
+  opacity: 0.8;
+}
+
+.link-tile-arrow {
+  color: #00538e;
+  margin-top: 15px;
+  font-size: 20px;
+  height: 20px;
+  width: 20px;
 }
