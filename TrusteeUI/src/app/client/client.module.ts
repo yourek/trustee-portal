@@ -10,7 +10,8 @@ import { ClientHomeComponent } from './client-home/client-home.component';
 import { ClientArticlesComponent } from './client-articles/client-articles.component';
 import { ClientAuctionsComponent } from './client-auctions/client-auctions.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
-
+import { ToolsModule } from '../tools/tools.module';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -18,14 +19,16 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
     ClientHomeComponent,
     ClientArticlesComponent,
     ClientAuctionsComponent,
-    NavBarComponent
+    NavBarComponent,
+    FooterComponent
   ],
   imports: [
     CommonModule,
     ClientRoutingModule,
     MatMenuModule,
     MatIconModule,
-    MatButtonModule
+    MatButtonModule,
+    ToolsModule
   ]
 })
 export class ClientModule { }

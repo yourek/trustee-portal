@@ -10,7 +10,28 @@
 
 <div class="container">
     <!-- <img src="assets/wwa.jpg" class="main-img"> -->
+    <!-- <lib-slick-slides></lib-slick-slides> -->
     
+    <div class="slick-dots">
+        <button *ngFor="let element of dummyElements" 
+            class="slick-dot"
+            [attr.id]="'btn-'+element" 
+            [attr.test]="1"
+            (click)="onClick($event)"
+            [ngClass]="{'slick-active' : element.toString() === this.activeElementId}">
+                &nbsp;
+        </button>
+    </div>
+    
+    <div class="new-slick">
+        <h1 *ngFor="let element of dummyElements" 
+            class="new-slick-item" 
+            [attr.id]="'newitem-'+element"
+            [ngClass]="{'new-slick-item-active' : element.toString() === this.activeElementId}">
+                {{element}}
+        </h1>
+    </div>
+
     <div class="row">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut 
         labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 

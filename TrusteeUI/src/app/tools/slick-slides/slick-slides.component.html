@@ -1,0 +1,18 @@
+<div class="slick-dots">
+    <button *ngFor="let element of dummyElements" 
+        class="slick-dot"
+        [attr.id]="'btn-'+element" 
+        (click)="onClick($event)"
+        [ngClass]="{'slick-active' : element.toString() === this.activeElementId}">
+            &nbsp;
+    </button>
+</div>
+
+<div class="new-slick">
+    <h1 *ngFor="let element of dummyElements" 
+        class="new-slick-item" 
+        [attr.id]="'newitem-'+element"
+        [ngClass]="{'new-slick-item-active' : element.toString() === this.activeElementId}">
+            {{element}}
+    </h1>
+</div>

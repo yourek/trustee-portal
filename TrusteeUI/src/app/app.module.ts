@@ -13,6 +13,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { FormsModule } from '@angular/forms';
 import { BasicAuthInterceptor } from './helpers/basic-auth.interceptor';
 import { SimpleConfirmationDialogComponent } from './tools/dialogs/simple-confirmation-dialog/simple-confirmation-dialog.component';
+import { ToolsModule } from './tools/tools.module';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { SimpleConfirmationDialogComponent } from './tools/dialogs/simple-confir
     MatButtonModule,
     FormsModule,
     MatDialogModule,
-    MatIconModule
+    MatIconModule,
+    ToolsModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: BasicAuthInterceptor, multi: true}

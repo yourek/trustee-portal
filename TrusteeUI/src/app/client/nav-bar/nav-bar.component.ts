@@ -15,7 +15,6 @@ export class NavBarComponent implements OnInit {
   onWindowScroll(){
     if (window.scrollY > 150) {
       document.getElementById("header")?.classList.add("sticky")
-      console.log('test')
     } else {
       document.getElementById("header")?.classList.remove("sticky")
     }
@@ -27,8 +26,6 @@ export class NavBarComponent implements OnInit {
       //.pipe(takeUntil(this.ngOnDestroy$))
       .subscribe((breakpointState: BreakpointState) => {
         this.mobileSize = breakpointState.matches;
-        console.log(this.mobileSize);
-        //this.isMenuOpened = !this.mobileSize;
       });
   }
 

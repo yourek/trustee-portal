@@ -1,25 +1,5 @@
 @import "../../../styles.scss";
 
-.main-img {
-    width: 100%;
-}
-
-.landing-row {
-    background-color: rgb(100, 100, 100, 1);
-    background-image: url("/assets/wwa.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 85vh;
-    display: flex;
-    align-items: center;
-}
-
-.title {
-    color: $ColorWhite;
-    font-size: 2.5rem;
-    font-weight: 200;
-}
-
 .slick-dots {
     display: flex;
     flex-direction: row;
