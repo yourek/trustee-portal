@@ -85,13 +85,29 @@
 }
 
 .about-left {
+    width: 600px;
+}
 
+.overlay {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
 }
 
 .about-img {
+    opacity: 0.9;
     width: 600px;
     height: auto;
+    transform: scale(1.10);
+    transition: transform 0.5s, opacity 0.5s;
 }
+
+.about-img:hover {
+    opacity: 1;
+    transform: scale(1.03);
+}
+
 
 .about-right {
     display: flex;
@@ -145,6 +161,7 @@
 }
 
 .faculties-blog-highlight { 
+    opacity: 0.9;
     display: flex;
     flex-direction: column;
     flex-grow: 2;
