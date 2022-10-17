@@ -5,7 +5,7 @@ import { TimeoutConfig } from 'rxjs';
   selector: 'lib-slick-slides',
   templateUrl: './slick-slides.component.html',
   styleUrls: ['./slick-slides.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  //changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SlickSlidesComponent implements OnInit {
   public activeElementId = '1';
@@ -33,7 +33,7 @@ export class SlickSlidesComponent implements OnInit {
 
   onClick(event: any) {
     if (event.target.id) {
-      this.activeElementId = event.target.id.split('-')[1]
+      //this.activeElementId = event.target.id.split('-')[1]
     }
   }
 }

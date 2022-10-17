@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Auction } from 'src/app/api/models';
+import { ContentOrchestrationService } from 'src/app/services/content.orchestration.service';
+import { map } from 'rxjs';
 
 @Component({
   selector: 'app-client-home',
@@ -6,28 +9,31 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./client-home.component.scss']
 })
 export class ClientHomeComponent implements OnInit {
+  auctions: Auction[] = [];
 
   activeElementId = '1';
 
   dummyElements = [1,2,3,4]
 
-  constructor() { }
+  constructor(
+    private contentOrchestrationService: ContentOrchestrationService
+    ) { }
 
   ngOnInit(): void {
-    setInterval(() => {
-      var newId = (parseInt(this.activeElementId)+1).toString();
-      if (newId === '5') {
-        newId = '1';
+    this.contentOrchestrationService.getAuctions()
+    .pipe(
+      map(res => {
+        return res.slice(0,3);
+      })
+    )
+    .subscribe(
+      res => {
+        if (res) {
+          this.auctions = res;
+          console.log(this.auctions);
+        }
       }
-      this.activeElementId = newId;
-      console.log(this.activeElementId)
-    }, 2000)
-  }
-
-  onClick(event: any) {
-    if (event.target.id) {
-      this.activeElementId = event.target.id.split('-')[1]
-      console.log(this.activeElementId)
-    }
+    );
+    
   }
 }

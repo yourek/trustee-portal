@@ -65,6 +65,11 @@ a {
     margin-right: auto;
 }
 
+.clearfix:after, .clearfix:before, .container-fluid:after, .container-fluid:before, .container:after, .container:before, .row:after, .row:before {
+  content: " ";
+  display: table;
+}
+
 .row {
     display: flex;
 }

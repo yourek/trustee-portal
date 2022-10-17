@@ -138,6 +138,11 @@
     padding: 25px 20px;
 }
 
+.auction-item:hover {
+    background-color: $ColorSlate9;
+    cursor: pointer;
+}
+
 .auction-title {
     font-size: 26px;
     font-weight: 500;

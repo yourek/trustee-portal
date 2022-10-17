@@ -1,0 +1,28 @@
+@import "../../../styles.scss";
+
+.landing-row {
+    background-color: rgb(100, 100, 100, 1);
+    background-image: url("/assets/wwa-header.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 200px;
+    display: flex;
+    flex-direction: row;
+}
+
+.landing-data {
+    width: 1345px;
+    position: relative;   
+}
+
+.title {
+    position: absolute;
+    top:120px;
+    left:20px;
+    font-family: 'Lora', serif;
+    color: $ColorWhite;
+    font-weight: 600;
+    font-size: 63px;
+    line-height: 58px;
+    margin-bottom: 20px;
+}

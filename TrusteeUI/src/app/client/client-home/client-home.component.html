@@ -79,52 +79,19 @@
                         <mat-icon class="link-tile-arrow">arrow_right</mat-icon>
                     </div>
                     <div class="auctions-list">
-                        <div class="auction-item">
-                            <h3 class="auction-title">
-                                Licytacja nieruchomości na Bemowie
-                            </h3>
-                            <h4 class="auction-date">
-                                24. Lipca, 2022
-                            </h4>
-                            <p class="auction-text">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut 
-                                labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
-                                laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in 
-                                voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat 
-                                non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                            </p>
-                        </div>
-                        <div class="auction-item">
-                            <h3 class="auction-title">
-                                Licytacja nieruchomości na Bemowie
-                            </h3>
-                            <h4 class="auction-date">
-                                24. Lipca, 2022
-                            </h4>
-                            <p class="auction-text">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut 
-                                labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
-                                laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in 
-                                voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat 
-                                non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                            </p>
-                        </div>
-                        <div class="auction-item">
-                            <h3 class="auction-title">
-                                Licytacja nieruchomości na Bemowie
-                            </h3>
-                            <h4 class="auction-date">
-                                24. Lipca, 2022
-                            </h4>
-                            <p class="auction-text">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut 
-                                labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
-                                laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in 
-                                voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat 
-                                non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                            </p>
-                        </div>
-    
+                        <div *ngFor="let auction of auctions">
+                            <div class="auction-item" [routerLink]="'./aktualnosci'">
+                                <h3 class="auction-title">
+                                    {{auction.Title}}
+                                </h3>
+                                <h4 class="auction-date">
+                                    {{auction.Date}}
+                                </h4>
+                                <p class="auction-text">
+                                    {{auction.Body}}
+                                </p>
+                            </div>
+                        </div>   
                     </div>
                 </div>
                 <div class="faculties-blog-highlight">
